@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cognis-geoaoi-pro"
+version = "0.1.0"
+description = "MIL-STD-2525 / APP-6 symbology + AOI helpers (QGIS-compatible)"
+license = {text = "GPL-3.0-or-later"}
+requires-python = ">=3.10"
+authors = [{name="Cognis Digital", email="suite@cognis.digital"}]
+readme = "README.md"
+keywords = ["military","ic","dod","cognis-digital","geoaoi-pro"]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "pytest-cov"]
+
+[project.scripts]
+geoaoi-pro = "geoaoi_pro.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["geoaoi_pro", "cognis_mil"]

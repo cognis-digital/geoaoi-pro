@@ -1,0 +1,59 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0369,
+          38.8951
+        ]
+      },
+      "properties": {
+        "sidc": "SFGPUCI-----E--",
+        "name": "Unit Alpha (friend, infantry)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.05,
+          38.9
+        ]
+      },
+      "properties": {
+        "sidc": "SHGPUCI-----E--",
+        "name": "Hostile contact"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.06,
+          38.91
+        ]
+      },
+      "properties": {
+        "name": "Unknown \u2014 no SIDC"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.07,
+          38.92
+        ]
+      },
+      "properties": {
+        "sidc": "BAD"
+      }
+    }
+  ]
+}
