@@ -6,7 +6,7 @@ build-backend = "hatchling.build"
 name = "cognis-geoaoi-pro"
 version = "0.1.0"
 description = "MIL-STD-2525 / APP-6 symbology + AOI helpers (QGIS-compatible)"
-license = {text = "GPL-3.0-or-later"}
+license = { text = "LicenseRef-COCL-1.0" }
 requires-python = ">=3.10"
 authors = [{name="Cognis Digital", email="suite@cognis.digital"}]
 readme = "README.md"
