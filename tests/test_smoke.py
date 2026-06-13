@@ -1,5 +1,5 @@
 from pathlib import Path
-from geoaoi_pro.core import validate_sidc, haversine_km, scan, bbox_for_points
+from geoaoi_pro.core import validate_sidc, haversine_km, scan
 D = Path(__file__).parent.parent / "demos"
 def test_sidc_valid():
     assert validate_sidc("SFGPUCI-----E--")[0] is True
