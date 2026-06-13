@@ -3,7 +3,7 @@
 Cognis additions only. QGIS is GPL-2/GPL-3. This module is GPL-3.
 """
 from __future__ import annotations
-import re, math, json
+import math, json
 from pathlib import Path
 from cognis_mil import ScanResult, Finding, Severity
 
