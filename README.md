@@ -5,6 +5,41 @@
 
 > Validate, audit, and sanity-check MIL-symbol GeoJSON layers used in QGIS or anywhere else.
 
+## Usage — step by step
+
+`geoaoi-pro` validates MIL-STD-2525 / APP-6 symbol codes (SIDC) and AOI coordinate geometry in your input files, emitting findings.
+
+1. **Install:**
+
+   ```bash
+   pip install cognis-geoaoi-pro      # or: pip install -e .
+   geoaoi-pro --version
+   ```
+
+2. **Run a scan** over a directory of symbol/AOI JSON files (`target` defaults to `.`):
+
+   ```bash
+   geoaoi-pro ./overlays --format console
+   ```
+
+3. **Emit JSON** for tooling and write it to disk (formats: `console`, `json`, `markdown`, `sarif`, `oscal`):
+
+   ```bash
+   geoaoi-pro ./overlays --format json --out sidc-findings.json
+   ```
+
+4. **Read the result** — findings flag missing SIDC (`GP-NOSIDC-*`), malformed SIDC (`GP-BADSIDC-*`), and bad coordinates (`GP-COORDS-*`), each with a severity:
+
+   ```bash
+   jq '.findings[] | {id, severity, location}' sidc-findings.json
+   ```
+
+5. **Gate it in CI** — fail the build on high-severity symbology errors:
+
+   ```bash
+   geoaoi-pro ./overlays --format sarif --out geoaoi.sarif --fail-on high
+   ```
+
 ## Upstream
 
 Forks / wraps **https://github.com/qgis/QGIS**. See [`UPSTREAM.md`](./UPSTREAM.md) for the
