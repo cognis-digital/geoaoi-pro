@@ -23,3 +23,6 @@ geoaoi-pro = "geoaoi_pro.cli:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["geoaoi_pro", "cognis_mil"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
