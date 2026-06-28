@@ -5,6 +5,83 @@
 
 > Validate, audit, and sanity-check MIL-symbol GeoJSON layers used in QGIS or anywhere else.
 
+
+<!-- cognis:example:start -->
+## 🔎 Example output
+
+Real, reproducible output from the tool — runs offline:
+
+```console
+$ geoaoi-pro-emit --version
+geoaoi-pro 0.1.0
+```
+
+```console
+$ geoaoi-pro-emit --help
+usage: geoaoi-pro [-h] [--format {console,json,markdown,sarif,oscal}]
+                  [--out OUT] [--fail-on {very_high,high,moderate,low,none}]
+                  [--classification CLASSIFICATION] [-v]
+                  [target]
+
+geoaoi-pro — Cognis Digital · Military/IC ecosystem
+
+positional arguments:
+  target                Path/target
+
+options:
+  -h, --help            show this help message and exit
+  --format {console,json,markdown,sarif,oscal}
+  --out OUT             Write output to file
+  --fail-on {very_high,high,moderate,low,none}
+  --classification CLASSIFICATION
+                        Operator-supplied banner. PLACEHOLDER. Tool does not
+                        interpret.
+  -v, --version         show program's version number and exit
+```
+
+> Blocks above are real `geoaoi-pro` output — reproduce them from a clone.
+
+**Sample result format** _(illustrative values — run on your own data for real findings):_
+
+```
+{
+"findings": [
+    {
+        "id": "12345",
+        "title": "Suspicious Network Traffic",
+        "description": "Potential malware activity detected on network 192.168.1.100",
+        "created_by": "AI-Driven SOC",
+        "created_at": "2023-02-15T14:30:00Z",
+        "objects": [
+            {
+                "id": "obj_12345",
+                "type": "indicator",
+                "name": "Malware C2 Server",
+                "description": "Potential Command and Control server for malware"
+            }
+        ]
+    },
+    {
+        "id": "67890",
+        "title": "Unusual Login Activity",
+        "description": "Multiple failed login attempts from unknown IP address 203.0.113.1",
+        "created_by": "AI-Driven SOC",
+        "created_at": "2023-02-15T14:31:00Z",
+        "objects": [
+            {
+                "id": "obj_67890",
+                "type": "indicator",
+                "name": "Potential Malicious Actor",
+                "description": "Unknown actor attempting to access system"
+            }
+        ]
+    }
+]
+}
+```
+
+<!-- cognis:example:end -->
+
 ## Usage — step by step
 
 `geoaoi-pro` validates MIL-STD-2525 / APP-6 symbol codes (SIDC) and AOI coordinate geometry in your input files, emitting findings.

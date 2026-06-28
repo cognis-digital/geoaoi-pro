@@ -1,0 +1,3 @@
+$ geoaoi-pro-emit --version
+
+geoaoi-pro 0.1.0
